@@ -38,19 +38,19 @@ button, button:focus {
 
 /* Color Template  */
 .color-primary {
-    color: #003859;
+    color: #ffffff;
 }
 
 .color-primary-bg {
-    background: #003859;
+    background: #ffffff;
 }
 
 .color-second {
-    color: #00A5C4;
+    color: #fdfdfd;
 }
 
 .color-second-bg {
-    background: #00A5C4;
+    background: #161717;
 }
 
 .color-yellow {
@@ -60,7 +60,9 @@ button, button:focus {
 .color-yellow-bg {
     background: #FFD289;
 }
-
+.product{
+    padding-right: 100px;
+}
 /*  top sale template   */
 #top-sale .owl-carousel .item .product a {
     overflow: hidden;
@@ -82,7 +84,7 @@ button, button:focus {
 #top-sale .owl-carousel .owl-nav button.owl-prev span,
 #top-sale .owl-carousel .owl-nav button.owl-next span {
     font-size: 35px;
-    color: #003859;
+    color: #010304;
     padding: 0 1rem;
 }
 #top-sale .owl-carousel .owl-nav button.owl-prev span {

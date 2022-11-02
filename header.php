@@ -24,36 +24,59 @@
     ?>
 
 </head>
+<style>
+    .item1{
+        background-color: #14123d;
+        margin-right: 10px;
+        border: 1px ;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    body{
+        background-color:#fca311;
+        color:white;
+    }
+    .image{
+        margin:auto;
+        height:180px;
+        width:170px;
+    }
+    .image  img{
+        height:180px;
+        width:170px;
+    }
+</style>
 <body>
 
 <!-- start #header -->
 <header id="header">
-    <div id= "top"class="strip d-flex justify-content-between px-4 py-1 bg-light">
+    <div id= "top"class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
         <div class="font-rale font-size-14">
-            <a href="#" class="px-3 border-right border-left text-dark"><?php session_start(); echo $_SESSION['user'];?></a>
-            <a href="#" class="px-3 border-right text-dark">Orders</a>
+            <a href="#" class="px-3 border-right border-left text-light"><?php session_start(); echo $_SESSION['user'];?></a>
+            <a href="#" class="px-3 border-right text-light">Orders</a>
         </div>
     </div>
 
     <!-- Primary Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+    <nav class="navbar navbar-expand-lg bg-danger">
         <a class="navbar-brand" href="main.php"><img class="logo" src="assets/logo.png" style="width:4vw"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav m-auto font-rubik">
-                <li class="nav-item active">
-                    <a class="nav-link" href="main.php">All Categories</a>
+            <ul class="navbar-nav m-auto font-rubik" >
+                <li class="nav-item">
+                    <a class="nav-link color-primary" href="main.php">All Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="electronics.php">Electronics</a>
+                    <a class="nav-link color-primary" href="electronics.php">Electronics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="clothing.php">Clothing</a>
+                    <a class="nav-link color-primary" href="clothing.php">Clothing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Toys</a>
+                    <a class="nav-link color-primary" href="#">Toys</a>
                 </li>
                 
             </ul>

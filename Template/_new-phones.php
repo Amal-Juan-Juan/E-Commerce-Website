@@ -18,9 +18,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <!-- owl carousel -->
         <div class="owl-carousel owl-theme">
             <?php foreach ($product_shuffle as $item) { ?>
-                <div class="item py-2 bg-light">
-                    <div class="product font-rale">
+                <div class="item1">
+                    <div class="product1">
+                        <div class="image">
                         <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product1" width="190" height="180"></a>
+
+                        </div>
                         <div class="text-center">
                             <h6><?php echo  $item['item_name'] ?? "Unknown";  ?></h6>
                             <div class="rating text-warning font-size-12">
