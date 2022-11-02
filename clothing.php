@@ -5,7 +5,7 @@
 ?>
 
 <?php
-        include ('Template/Electronics_all.php');
+        include ('Template/Clothing_all.php');
 
 ?>
 

@@ -44,13 +44,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav m-auto font-rubik">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">All Categories</a>
+                    <a class="nav-link" href="main.php">All Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Electronics</a>
+                    <a class="nav-link" href="electronics.php">Electronics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Clothing</a>
+                    <a class="nav-link" href="clothing.php">Clothing</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Toys</a>

@@ -1,24 +1,24 @@
 <!-- Special Price -->
 <?php
-    $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
+    $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle_Electronics);
     $unique = array_unique($brand);
     sort($unique);
-    shuffle($product_shuffle);
+    shuffle($product_shuffle_Electronics);
 
 // request method post
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-    if (isset($_POST['special_price_submit'])){
+    if (isset($_POST['top_sale_submit'])){
         // call method addToCart
         $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
     }
 }
 
 $in_cart = $Cart->getCartId($product->getData('cart'));
-
+ 
 ?>
 <section id="special-price">
     <div class="container">
-        <h4 class="font-rubik font-size-20">Special Price</h4>
+        <h4 class="font-rubik font-size-20">Electronics</h4>
         <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">All Brand</button>
             <?php
@@ -61,7 +61,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                     </div>
                 </div>
             </div>
-            <?php }, $product_shuffle) ?>
+            <?php }, $product_shuffle_Electronics) ?>
         </div>
     </div>
 </section>

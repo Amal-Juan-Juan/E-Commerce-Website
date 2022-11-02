@@ -25,6 +25,36 @@ class Product
         
 
         return $resultArray;
+    } 
+    public function getDataElectronics($table = 'product'){
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='Electronics'");
+        $resultArray = array();
+
+        // fetch product data one by one
+        if($result != null){
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $resultArray[] = $item;
+            }
+
+        }
+        
+
+        return $resultArray;
+    }
+    public function getDataClothing($table = 'product'){
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='Clothing'");
+        $resultArray = array();
+
+        // fetch product data one by one
+        if($result != null){
+            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $resultArray[] = $item;
+            }
+
+        }
+        
+
+        return $resultArray;
     }
     public function getDataCart($table = 'product'){
         $result = $this->db->con->query("SELECT * FROM {$table} WHERE user_id = '". $_SESSION['user_id'] . "'");

@@ -47,6 +47,22 @@ class Cart
             }
         }
     }
+    public  function addToCartProduct($userid, $itemid){
+        if (isset($userid) && isset($itemid)){
+            $params = array(
+                "user_id" => $userid,
+                "item_id" => $itemid
+            );
+
+            // insert data into cart
+            $result = $this->insertIntoCart($params);
+            if ($result){
+                $item_id = $_GET['item_id'];
+                // Reload Page
+                header("Location: " . $_SERVER['PHP_SELF']."?item_id=".$item_id);
+            }
+        }
+    }
 
     // delete cart item using cart item id
     public function deleteCart($item_id = null, $table = 'cart'){
