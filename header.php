@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,78 +22,112 @@
 
     <?php
     // require functions.php file
-    require ('functions.php');
+    require('functions.php');
     ?>
 
 </head>
 <style>
-    .item1{
-        background-color: #14123d;
-        margin-right: 10px;
-        border: 1px ;
+    .item {
+        background-color: white;
+        border: 10px solid #FFDEDE;
+        width: 220px;
+        border-radius: 20px;
+    }
+
+    .item1 {
+        background-color: #425F57;
+        width: 200px;
+        border: 1px;
         border-radius: 10px;
         padding-bottom: 10px;
         padding-top: 10px;
     }
-    body{
-        background-color:#fca311;
-        color:white;
+
+    .headerbg {
+        background-color: #EB4747;
     }
-    .image{
-        margin:auto;
-        height:180px;
-        width:170px;
+
+    body {
+        background-color: #FFDEDE;
+        color: black;
+        overflow-x: hidden;
     }
-    .image  img{
-        height:180px;
-        width:170px;
+
+    .image {
+        margin: auto;
+        height: 180px;
+        width: 170px;
     }
+
+    .image img {
+        height: 180px;
+        width: 170px;
+    }
+
+    .btn-color {
+        background-color: black;
+        color: white;
+    }
+
+    .btn-color-1 {
+        background-color: grey;
+        color: black;
+    }
+
+    .cart-item {
+        background-color: #14473d;
+        border: 1px solid;
+        border-radius: 15px;
+    }
+
+   
 </style>
+
 <body>
+    <!-- start #header -->
+    <header id="header">
+        <div id="top" class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
+            <div class="font-rale font-size-14">
+                <a href="#" class="px-3 border-right border-left text-light"><?php session_start();
+                                                                                echo $_SESSION['user']; ?></a>
+                <a href="orders.php" class="px-3 border-right text-light">Orders</a>
+                <a href="logout.php" class="px-3 border-right text-light">Logout</a>
 
-<!-- start #header -->
-<header id="header">
-    <div id= "top"class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
-        <div class="font-rale font-size-14">
-            <a href="#" class="px-3 border-right border-left text-light"><?php session_start(); echo $_SESSION['user'];?></a>
-            <a href="#" class="px-3 border-right text-light">Orders</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Primary Navigation -->
-    <nav class="navbar navbar-expand-lg bg-danger">
-        <a class="navbar-brand" href="main.php"><img class="logo" src="assets/logo.png" style="width:4vw"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav m-auto font-rubik" >
-                <li class="nav-item">
-                    <a class="nav-link color-primary" href="main.php">All Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color-primary" href="electronics.php">Electronics</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color-primary" href="clothing.php">Clothing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color-primary" href="#">Toys</a>
-                </li>
-                
-            </ul>
-            <form action="#" class="font-size-14 font-rale">
-                <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
-                    <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                    <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php  echo count($product->getDataCart('cart')); ?></span>
-                </a>
-            </form>
-        </div>
-    </nav>
-    <!-- !Primary Navigation -->
+        <!-- Primary Navigation -->
+        <nav class="navbar navbar-expand-lg headerbg">
+            <a class="navbar-brand" href="main.php"><img class="logo" src="assets/logo.png" style="width:4vw"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav m-auto font-rubik">
+                    <li class="nav-item">
+                        <a class="nav-link color-primary" href="main.php">All Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-primary" href="electronics.php">Electronics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color-primary" href="clothing.php">Clothing</a>
+                    </li>
+                    
 
-</header>
-<!-- !start #header -->
+                </ul>
+                <form action="#" class="font-size-14 font-rale">
+                    <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
+                        <span class="font-size-16 px-2 text-dark"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="px-3 py-2 rounded-pill text-light bg-dark"><?php echo count($product->getDataCart('cart')); ?></span>
+                    </a>
+                </form>
+            </div>
+        </nav>
+        <!-- !Primary Navigation -->
 
-<!-- start #main-site -->
-<main id="main-site">
+    </header>
+    <!-- !start #header -->
+
+    <!-- start #main-site -->
+    <main id="main-site">

@@ -1,13 +1,13 @@
 <!-- Owl-carousel -->
 <section id="banner-area">
     <div class="owl-carousel owl-theme">
-        <div class="item">
+        <div class="item-b">
             <img src="./assets/Banner1.png" alt="Banner1">
         </div>
-        <div class="item">
+        <div class="item-b">
             <img src="./assets/Banner2.png" alt="Banner2">
         </div>
-        <div class="item">
+        <div class="item-b">
             <img src="./assets/Banner1.png" alt="Banner3">
         </div>
     </div>

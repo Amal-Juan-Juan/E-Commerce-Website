@@ -31,13 +31,13 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>
             <div class="grid-item  <?php echo $item['item_brand'] ?? "Brand" ; ?>">
-                <div class="item1">
+                <div class="item">
                     <div class="product1">
                         <div class="image">
                         <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" width="180" height="180"></a>
 
                         </div>
-                        <div class="text-center">
+                        <div class="text-center item1">
                             <h6><?php echo $item['item_name'] ?? "Unknown"; ?></h6>
                             <div class="rating text-warning font-size-12">
                                 <span><i class="fas fa-star"></i></span>
@@ -54,9 +54,9 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                                 <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                                 <?php
                                 if (in_array($item['item_id'], $in_cart ?? [])){
-                                    echo '<button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>';
+                                    echo '<button type="submit" disabled class="btn btn-color-1 font-size-12">In the Cart</button>';
                                 }else{
-                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">Add to Cart</button>';
+                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-color font-size-12">Add to Cart</button>';
                                 }
                                 ?>
                             </form>
