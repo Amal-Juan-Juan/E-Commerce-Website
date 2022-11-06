@@ -137,10 +137,10 @@
         </nav>
     </header>
     <br>
-    <h1><u><b>My Account</b></u></h1>
+    <h1><u><b><center>My Account</b></u></h1>
 
     <div class="container">
-      <center>  <h2>userid: <?php echo $_SESSION['user'];?</h2></center>
+      <center>  <h2>userid: <?php echo $_SESSION['user'];?></h2></center>
 
        <h2><u>Security and privacy</u></h2><br>
         <button>Change password</button><br><br>

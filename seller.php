@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,37 +19,22 @@
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="style.css">
 
-    <?php
-    // require functions.php file
-    require('functions.php');
-    ?>
+
 
 </head>
 <style>
-    .item {
-        background-color: white;
-        border: 10px solid #f0ebec;
-        width: 220px;
-        border-radius: 20px;
-    }
-
     .item1 {
-        background-color: #DAA7AF;
-        width: 200px;
+        background-color: #14123d;
+        margin-right: 10px;
         border: 1px;
         border-radius: 10px;
         padding-bottom: 10px;
         padding-top: 10px;
     }
 
-    .headerbg {
-        background-color: #EB4747;
-    }
-
     body {
-        background-color: #f0ebec;
-        color: black;
-        overflow-x: hidden;
+        background-color: #fca311;
+        color: white;
     }
 
     .image {
@@ -63,82 +47,54 @@
         height: 180px;
         width: 170px;
     }
-
-    .btn-color {
-        background-color: black;
-        color: white;
+    .container{
+        margin:auto;
     }
-
-    .btn-color-1 {
-        background-color: grey;
-        color: black;
-    }
-
-    .cart-item {
-        background-color: pink;
-        border-radius: 15px;
-    }
-    .subtotal {
-        background-color: #fae8ef;
-    }
-    #top{
-        position:relative;
-        height:40px;
-    }
-    .top1{
-        text-align: center;
-        position: absolute;
-        right:0;
-    }
-
-   
 </style>
 
 <body>
+
+
     <!-- start #header -->
     <header id="header">
         <div id="top" class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
-            <div class="font-rale font-size-14 top1">
-                <a href="myacc.php" class="px-3 border-right border-left text-light"><?php session_start();
-                                                                                echo $_SESSION['user']; ?></a>
-                <a href="orders.php" class="px-3 border-right text-light">Orders</a>
-                <a href="logout.php" class="px-3 border-right text-light">Logout</a>
-
+            <div class="font-rale font-size-14">
+                <a href="#" class="px-3 border-right border-left text-light"><?php session_start();
+                                                                                echo $_SESSION['seller']; ?></a>
+                <a href="seller_logout.php" class="px-3 border-right border-left text-light">Logout</a>
             </div>
         </div>
 
         <!-- Primary Navigation -->
-        <nav class="navbar navbar-expand-lg headerbg">
-            <a class="navbar-brand" href="main.php"><img class="logo" src="assets/logo.png" style="width:4vw"></a>
+        <nav class="navbar navbar-expand-lg bg-danger">
+            <a class="navbar-brand" href="seller.php"><img class="logo" src="assets/logo.png" style="width:4vw"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav m-auto font-rubik">
                     <li class="nav-item">
-                        <a class="nav-link color-primary" href="main.php">All Categories</a>
+                        <a class="nav-link color-primary" href="productForm.php">Add Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-primary" href="electronics.php">Electronics</a>
+                        <a class="nav-link color-primary" href="seller.php">My products</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-primary" href="clothing.php">Clothing</a>
-                    </li>
-                    
-
                 </ul>
-                <form action="#" class="font-size-14 font-rale">
-                    <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
-                        <span class="font-size-16 px-2 text-dark"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-light bg-dark"><?php echo count($product->getDataCart('cart')); ?></span>
-                    </a>
-                </form>
             </div>
         </nav>
         <!-- !Primary Navigation -->
-
     </header>
     <!-- !start #header -->
 
     <!-- start #main-site -->
+
     <main id="main-site">
+        <h2>
+            <center>Your products
+        </h2>
+        <div class="container">
+            <?php
+            include 'seller_products.php';
+
+            ?>
+        </div>

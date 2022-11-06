@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="seller_login.css">
 </head>
 <body style="background-color:aqua">
     <?php
     $res="";
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         session_start();
-        include 'login.php';
+        include 'login_fun.php';
         $_SESSION['user'] = $email;
         
         
@@ -28,8 +28,8 @@
                     <img src="assets/logo.png" alt="IMG">
                 </div>
 
-                <form class="login-form" action="index.php" method="POST">
-                    <span class="login-form-title">Login</span>
+                <form class="login-form" action="login_fun.php" method="POST">
+                    <span class="login-form-title">Bussiness Login</span>
 
                     <div class="wrap-input">
                         <input type="text" class="input" name="email" placeholder="Email" required>

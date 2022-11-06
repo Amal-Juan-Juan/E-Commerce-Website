@@ -1,5 +1,5 @@
 <?php
-include './Fetch/dbconfig.php';
+include 'database/db_controller.php';
 $email = $_POST["email"];
 $pass = $_POST["pass"];
 $address = $_POST["address"];
@@ -16,7 +16,7 @@ if($repass != $pass){
     
 }
 else{
-    $stmt = $conn->prepare("INSERT INTO user(email,password,address) VALUES (?, ?, ?)");
+    $stmt = $con->prepare("INSERT INTO user(email,password,address) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $email, $pass, $address);
     $stmt -> execute();
     $res = "You may Login";

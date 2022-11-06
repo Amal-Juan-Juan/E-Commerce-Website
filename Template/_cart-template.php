@@ -45,9 +45,9 @@
                         <!-- product qty -->
                         <div class="qty d-flex pt-2">
                             <div class="d-flex font-rale w-25">
-                                <button name="qty-up"class="qty-up btn btn-primary" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
-                                <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input text-white text-center w-100 bg-primary" disabled value="1" placeholder="1">
-                                <button name="qty-down"data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down btn btn-primary"><i class="fas fa-angle-down"></i></button>
+                                <button name="qty-up"class="qty-up btn-dark" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
+                                <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input text-dark text-center w-100 bg-light" disabled value="1" placeholder="1">
+                                <button name="qty-down"data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down  btn-dark"><i class="fas fa-angle-down"></i></button>
                             </div>
 
                             <form method="post">
@@ -78,7 +78,7 @@
             </div>
             <!-- subtotal section-->
             <div class="col-sm-3">
-                <div class="rounded sub-total bg-primary text-center mt-2">
+                <div class="rounded sub-total subtotal text-center mt-2">
                     <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i> Your order is eligible for FREE Delivery.</h6>
                     <div class="border-top py-4">
                         <h5 class="font-baloo font-size-20">Subtotal ( <?php echo isset($subTotal) ? $_SESSION['no_items']=count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">
