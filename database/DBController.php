@@ -7,7 +7,7 @@ class DBController
     protected $host = 'localhost';
     protected $user = 'root';
     protected $password = '';
-    protected $database = "mobile";
+    protected $database = "atoz";
 
     // connection property
     public $con = null;

@@ -12,12 +12,8 @@
     $res="";
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         session_start();
-        include 'login_fun.php';
-        $_SESSION['user'] = $email;
-        
-        
-
-
+        include 'login_fun.php';  
+        $_SESSION['seller'] = $email;
     }
     ?>
     <div class="Main-container">
@@ -28,7 +24,7 @@
                     <img src="assets/logo.png" alt="IMG">
                 </div>
 
-                <form class="login-form" action="login_fun.php" method="POST">
+                <form class="login-form" action="sellerlogin.php" method="POST">
                     <span class="login-form-title">Bussiness Login</span>
 
                     <div class="wrap-input">
@@ -47,11 +43,14 @@
                     </div>
 
                     <div class="login-form-btn-container">
+                        <form action="sellerlogin.php" method="POST">
                         <button class="login-form-btn">Login</button>
+
+                        </form>
                     </div>
                     <h1 id="res"><?php echo $res?></h1>
                   <div class="text-center p-t-2">
-                      <a href="signup.php" class="txt2">Create Your Account <i class="fa fa-long-arrow-right " aria-hidden="true"></i></a>
+                      <a href="seller_signup.php" class="txt2">Create Your Account <i class="fa fa-long-arrow-right " aria-hidden="true"></i></a>
                   </div>
                 </form>
 

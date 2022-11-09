@@ -90,6 +90,19 @@
         position: absolute;
         right:0;
     }
+    #filter{
+        background-color:white;
+        width:50%;
+        display:none;
+        position: absolute;
+        z-index:0.9;
+    }
+    #filtertxt{
+        color:black;
+        position:absolute;
+        left:13vw;
+        z-index: 1;
+    }
 
    
 </style>

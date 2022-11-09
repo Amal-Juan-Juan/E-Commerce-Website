@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 }
 
-$in_cart = $Cart->getCartId($product->getData('cart'));
+$in_cart = $Cart->getCartId($product->getDataCart('cart'));
 
 ?>
 <section id="special-price">
@@ -21,11 +21,17 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
         <h4 class="font-rubik font-size-20">Special Price</h4>
         <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">All Brand</button>
+            <div style="margin-bottom:4vw;">
+            <h4 id="filtertxt" onclick="hover()">Filter-></h4>
+            <div id="filter" >
             <?php
                 array_map(function ($brand){
                     printf('<button class="btn" data-filter=".%s">%s</button>', $brand, $brand);
                 }, $unique);
             ?>
+            </div>
+            </div>
+            
         </div>
 
         <div class="grid">
@@ -51,7 +57,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                             </div>
                             <form method="post">
                                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
-                                <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                                 <?php
                                 if (in_array($item['item_id'], $in_cart ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-color-1 font-size-12">In the Cart</button>';
@@ -69,3 +75,19 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
     </div>
 </section>
 <!-- !Special Price -->
+<script> 
+function hover(){
+    if(document.getElementById('filter').style.display == "none"){
+        document.getElementById('filter').style.display = "block";
+    }
+    else{
+        document.getElementById('filter').style.display = "0";
+    }
+    console.log(document.getElementById('filter').style.display);
+
+
+    
+}
+
+
+</script>

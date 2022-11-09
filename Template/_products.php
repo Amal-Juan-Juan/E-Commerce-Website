@@ -25,7 +25,7 @@ foreach ($product->getData() as $item) :
                                     <input type="hidden" name="item_id" value="<?php echo $item_id; ?>">
                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
                                     <?php
-                                if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                                if (in_array($item['item_id'], $Cart->getCartId($product->getDataCart('cart')) ?? [])) {
                                     echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
                                 } else {
                                     echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';

@@ -59,7 +59,6 @@ class Cart
             if ($result){
                 $item_id = $_GET['item_id'];
                 // Reload Page
-                header("Location: " . $_SERVER['PHP_SELF']."?item_id=".$item_id);
             }
         }
     }

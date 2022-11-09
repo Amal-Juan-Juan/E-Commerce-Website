@@ -38,9 +38,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                             </div>
                             <form method="post">
                                 <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
-                                <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                                 <?php
-                                if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
+                                if (in_array($item['item_id'], $Cart->getCartId($product->getDataCart('cart')) ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-color-1 font-size-12">In the Cart</button>';
                                 }else{
                                     echo '<button type="submit" name="top_sale_submit" class="btn btn-color font-size-12">Add to Cart</button>';

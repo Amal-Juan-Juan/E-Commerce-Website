@@ -26,6 +26,7 @@ class Product
 
         return $resultArray;
     } 
+    
     public function getDataElectronics($table = 'product'){
         $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='Electronics'");
         $resultArray = array();
