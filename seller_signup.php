@@ -27,7 +27,7 @@
                     <img src="assets/logo.png" alt="IMG">
                 </div>
                 <form id="form" action=""class="login-form" method="POST">
-                <h1 class="login-form-title">Bussiness Sign up</h1>
+                <h1 class="login-form-title" style = "font-size:1.9vw;text-align:center;">Bussiness Sign up</h1>
 
                 <div class="inputContainer">
                     <input type="text" class="input" name="email" placeholder="a" required>

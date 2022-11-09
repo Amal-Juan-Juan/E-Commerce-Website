@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="seller_login.css">
 </head>
+
 <body style="background-color:aqua">
     <?php
-    $res="";
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $res = "";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         session_start();
-        include 'login_fun.php';  
+        include 'login_fun.php';
         $_SESSION['seller'] = $email;
     }
     ?>
@@ -44,14 +46,15 @@
 
                     <div class="login-form-btn-container">
                         <form action="sellerlogin.php" method="POST">
-                        <button class="login-form-btn">Login</button>
+                            <button class="login-form-btn">Login</button>
+                            <div class="create">
+                                <center><a href="seller_signup.php" class="txt2">Create Your Account <i class="fa fa-long-arrow-right " aria-hidden="true"></i></a>
+                            </div>
 
                         </form>
                     </div>
-                    <h1 id="res"><?php echo $res?></h1>
-                  <div class="text-center p-t-2">
-                      <a href="seller_signup.php" class="txt2">Create Your Account <i class="fa fa-long-arrow-right " aria-hidden="true"></i></a>
-                  </div>
+                    <h1 id="res"><?php echo $res ?></h1>
+
                 </form>
 
             </div>
@@ -59,4 +62,5 @@
     </div>
 
 </body>
+
 </html>

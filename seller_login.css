@@ -218,10 +218,15 @@ button:hover{
 }
 .login-form{
     width: 50%;
+    position: relative;
 }
 
 }
-
+.create{
+    position:absolute;
+    width:20%;
+    right:0;
+}
 
 @media (max-width: 768px){
     .wrap-login{
