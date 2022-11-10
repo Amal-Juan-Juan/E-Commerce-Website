@@ -108,13 +108,11 @@
 </style>
 
 <body>
-    <!-- start #header -->
+    <?php session_start(); ?>
     <header id="header">
         <div id="top" class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
             <div class="font-rale font-size-14 top1">
-                <a href="myacc.php" class="px-3 border-right border-left text-light"><?php session_start();
-                                                                                echo $_SESSION['user']; ?></a>
-                <a href="orders.php" class="px-3 border-right text-light">Orders</a>
+                <a href="myacc.php" class="px-3 border-right border-left text-light"><img src="assets/account.png" style="width:30px"></a>
                 <a href="logout.php" class="px-3 border-right text-light">Logout</a>
 
             </div>

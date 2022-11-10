@@ -27,32 +27,14 @@
         $res = "";
         $old = "";
         $new = "<br>";
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            include 'login.php';
-            $_SESSION['user'] = $email;
-            if (isset($_POST['old_pass'])) {
-                $old_pw = $_POST['old_pass'];
-                $new_pass = $_POST['new_pass'];
-                $sql = "SELECT password from user WHERE user_id=" . $_SESSION['user_id'];
-                $password = "";
-                $result = mysqli_query($con, $sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $password = $row['password'];
-                }
-                if ($password == $_POST['old_pass']) {
-                    $new = "Successfully changed";
-                    $sql1 = "UPDATE user set password =" . $_POST['new_pass'] . " WHERE user_id=" . $_SESSION['user_id'];
-                    mysqli_query($con, $sql1);
-                } else {
-                    $old = "Wrong password";
-                }
-            }
-            if (isset($_POST['addr'])) {
-                $sql1 = "UPDATE user set address ='" . $_POST['addr'] . "' WHERE user_id= " . $_SESSION['user_id'];
-                mysqli_query($con, $sql1);
-                $old = "Address Change Successfull";
-                echo mysqli_error($con);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $status = $_GET['status'];
+            if ($status == "1") {
+                $old = "Password Change Success";
+            } elseif ($status == "0") {
+                $old = "Old Password Incorrect";
+            } elseif ($status == "10") {
+                $old = "Address Change Success";
             }
         }
         ?> -->
@@ -145,6 +127,15 @@
         width: 12vw;
         margin: 0;
     }
+    #h3{
+        position:absolute;
+        top:8vw;
+    }
+    #viewmore{
+        position:absolute;
+        bottom:5vw;
+        left:30vw;
+    }
 </style>
 
 <body>
@@ -162,9 +153,7 @@
         ?>
         <div id="top" class="strip d-flex justify-content-between px-4 py-1 bg-dark ">
             <div class="font-rale font-size-14">
-                <a href="#" class="px-3 border-right border-left text-light"><?php
-                                                                                echo $_SESSION['user']; ?></a>
-                <a href="orders.php" class="px-3 border-right text-light">Orders</a>
+                <a href="#" class="px-3 border-right border-left text-light"><img src="assets/account.png" style="width:30px"></a>
                 <a href="logout.php" class="px-3 border-right text-light">Logout</a>
 
             </div>
@@ -202,25 +191,53 @@
     <div class="container">
         <center>
             <h2>Userid: <?php echo substr($_SESSION['user'], 0, strpos($_SESSION['user'], "@")); ?></h2>
+            <h3 id="h3">Your last Order:</h3>
         </center>
         <div class="left">
             <h2>Address:</h2>
             <p><?php echo $address; ?></p>
         </div>
+        <?php
+        include 'database/db_controller.php';
+        $user_id = $_SESSION['user_id'];
+        $sql = "SELECT * from orders WHERE user_id=" . $user_id;
+        $result = mysqli_query($con, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $row_no =0;
+            while ($row = mysqli_fetch_assoc($result)) {
+                $sql1 = "SELECT * from product WHERE item_id=" . $row["item_id"];
+                $result1 = mysqli_query($con, $sql1);
+                $date = $row["date_time"];
+                $orderid = $row["order_id"];
+                $row_no+=1;
+
+                if (mysqli_num_rows($result1) > 0 && $row_no==mysqli_num_rows($result)-1) {
+                    // output data of each row
+                    while ($row = mysqli_fetch_assoc($result1)) {
+                        include 'Template/single_order_card.php';
+                    }
+                }
+            }
+        } else {
+            echo "You have 0 Orders";
+        }
+        ?>
         <div class="right">
-            <form action="myacc.php" method="POST">
+            <form action="change_pw.php" method="POST">
                 <p><?php echo "$old" ?></p>
                 <input type="password" name="old_pass" placeholder="Old Password"><br>
                 <p><?php echo "$new" ?></p>
                 <input type="password" name="new_pass" placeholder="New Password"><br><br>
-
-                <button>Change Password</button>
+                <button type="submit" name="new_password_submit">Change Password</button>
+            </form>
+            <form method="post" action="change_addr.php">
                 <input type="text" name="addr" placeholder="New Address"><br><br>
-                <button>Change Address</button>
+                <button type="submit" name="change_address_submit">Change Address</button>
             </form>
 
 
         </div>
+        <a id="viewmore" href="orders.php">View More Orders</a>
 
 
     </div>

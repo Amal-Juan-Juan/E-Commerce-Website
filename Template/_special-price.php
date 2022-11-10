@@ -22,15 +22,12 @@ $in_cart = $Cart->getCartId($product->getDataCart('cart'));
         <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">All Brand</button>
             <div style="margin-bottom:4vw;">
-            <h4 id="filtertxt" onclick="hover()">Filter-></h4>
-            <div id="filter" >
             <?php
                 array_map(function ($brand){
                     printf('<button class="btn" data-filter=".%s">%s</button>', $brand, $brand);
                 }, $unique);
             ?>
-            </div>
-            </div>
+            
             
         </div>
 
