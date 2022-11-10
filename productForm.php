@@ -162,8 +162,7 @@
                 <span class="details">Category</span>
                 <select name="category">
                     <option value="Electronics">Electronics</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Toys">Toys</option>
+                    <option value="Clothing">Fashion</option>
                 </select>
               </div>
               <div class="input-box">

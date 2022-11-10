@@ -103,6 +103,9 @@
         left:13vw;
         z-index: 1;
     }
+    .item-b img{
+        height:700px;
+    }
 
    
 </style>
@@ -133,7 +136,7 @@
                         <a class="nav-link color-primary" href="electronics.php">Electronics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-primary" href="clothing.php">Clothing</a>
+                        <a class="nav-link color-primary" href="clothing.php">Fashion</a>
                     </li>
                     
 

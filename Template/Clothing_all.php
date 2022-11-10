@@ -18,7 +18,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
 ?>
 <section id="special-price">
     <div class="container">
-        <h4 class="font-rubik font-size-20">Clothing</h4>
+        <h4 class="font-rubik font-size-20">Fashion</h4>
         <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">All Brand</button>
             <?php
@@ -31,13 +31,13 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>
             <div class="grid-item <?php echo $item['item_brand'] ?? "Brand" ; ?>">
-                <div class="item1"style="width: 200px;">
+                <div class="item">
                     <div class="product1">
                         <div class="image">
                         <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1"></a>
 
                         </div>
-                        <div class="text-center">
+                        <div class="text-center item1">
                             <h6><?php echo $item['item_name'] ?? "Unknown"; ?></h6>
                             <div class="rating text-warning font-size-12">
                                 <span><i class="fas fa-star"></i></span>

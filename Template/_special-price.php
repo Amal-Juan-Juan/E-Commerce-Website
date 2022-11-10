@@ -18,7 +18,7 @@ $in_cart = $Cart->getCartId($product->getDataCart('cart'));
 ?>
 <section id="special-price">
     <div class="container">
-        <h4 class="font-rubik font-size-20">Special Price</h4>
+        <h4 class="font-rubik font-size-20">All Categories</h4>
         <div id="filters" class="button-group text-right font-baloo font-size-16">
             <button class="btn is-checked" data-filter="*">All Brand</button>
             <div style="margin-bottom:4vw;">
@@ -59,7 +59,7 @@ $in_cart = $Cart->getCartId($product->getDataCart('cart'));
                                 if (in_array($item['item_id'], $in_cart ?? [])){
                                     echo '<button type="submit" disabled class="btn btn-color-1 font-size-12">In the Cart</button>';
                                 }else{
-                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-color font-size-12">Add to Cart</button>';
+                                    echo '<button type="submit" name="special_price_submit" class="btn btn-color font-size-12">Add to Cart</button>';
                                 }
                                 ?>
                             </form>

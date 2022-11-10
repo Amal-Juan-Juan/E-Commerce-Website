@@ -11,7 +11,7 @@
       font-family: "Helvetica Neue", Helvetica;
     }
     .container1 {
-    background-color: #FFDEDE;
+    background-color: white;
       position: absolute;
       width: 50%;
       height: 50%;
@@ -58,8 +58,8 @@
     .button1 {
       font-size: 1vw;
       width: 9vw;
-      color: rgb(129, 23, 23);
-      background-color: #EB4747;
+      color: grey;
+      background-color: pink;
       transition: 0.2s ease-in-out;
       border-radius: 20px;
     }
