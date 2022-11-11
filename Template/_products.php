@@ -81,7 +81,7 @@ foreach ($product->getData() as $item) :
                                     <div class="font-size-20 my-2 color-second">
                                         <span class="fas fa-truck  border p-3 rounded-pill"></span>
                                     </div>
-                                    <a href="#" class="font-rale font-size-12">Daily Tuition <br>Deliverd</a>
+                                    <a href="#" class="font-rale font-size-12"><br>Delivered</a>
                                 </div>
                                 <div class="return text-center mr-5">
                                     <div class="font-size-20 my-2 color-second">
@@ -95,10 +95,11 @@ foreach ($product->getData() as $item) :
                         <hr>
 
                         <!-- order-details -->
+                    
                         <div id="order-details" class="font-rale d-flex flex-column text-dark">
                             <small>Delivery by : Mar 29 - Apr 1</small>
-                            <small>Sold by <a href="#">Daily Electronics </a>(4.5 out of 5 | 18,198 ratings)</small>
-                            <small><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Deliver to Customer - 424201</small>
+                            <small>Sold by <a href="#"> AtoZ Enterprises</a>(4.5 out of 5 | 18,198 ratings)</small>
+                            <small><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Delivery to -682025</small>
                         </div>
                         <!-- !order-details -->
 
@@ -110,12 +111,7 @@ foreach ($product->getData() as $item) :
 
                     </div>
 
-                    <div class="col-12">
-                        <h6 class="font-rubik">Product Description</h6>
-                        <hr>
-                        <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
-                        <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
-                    </div>
+                    
                 </div>
             </div>
         </section>
