@@ -10,7 +10,7 @@
       margin-left: 30px;
       margin-top: 40px;
       text-align: center;
-      float:left;
+      float: left;
       margin-right: 30px;
       font-family: arial;
     }
