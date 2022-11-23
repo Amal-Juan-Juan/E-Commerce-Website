@@ -11,8 +11,8 @@
       margin-top: 40px;
       text-align: center;
       float: left;
-      margin-right: 30px;
       font-family: arial;
+      margin-right: 30px;
     }
 
     .price {
